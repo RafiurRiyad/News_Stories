@@ -64,7 +64,7 @@
         </style>
     </head>
     <body>
-        <div id="loading" style="background-image: url('{{ asset('news_stories.jpg')}}');">
+        <div id="loading" style="background-image: url('{{ asset('/images/news_stories.jpg')}}');">
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
