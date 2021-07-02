@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">Story List</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -16,24 +16,33 @@
 
                     You are logged in!
                 </div>
-                <div class="row">
+                <div class="col-md-12 col-sm-12 mb-5">
 
                     <div class="col-md-12 col-sm-12 mb-5">
-                        <h1 style="color:blue;">Stories</h1>
+                        <h1 style="color:Green;">Stories</h1>
                         <a href="{{url('/add/stories')}}" class="btn btn-primary btn-sm">Add New Story</a>
                     </div>
 
 
                     @foreach ($data as $item)
-                    <div class="col-md-6">
-                        <h3>{{ $item['title'] }}<h4>
-                                <p class="">
-                                    {{ $item['body'] }}
-                                    {{ $item['published_date'] }}
-                                </p>
-                                <a href="{{url('/edit/stories/'.$item['id'])  }}" class="btn btn-primary btn-sm">edit</a>
-                                <a href="{{url('/delete/stories/'.$item['id'])  }}" class="btn btn-danger btn-sm">delete</a>
-                                <hr>
+                    <div class="col-md-12 col-sm-12 mb-5">
+                        <h3 style="color:blue;">{{ $item['title'] }}<h3>
+                        <p class="col-md-6">
+                            by {{$item['publisher']}} on {{$item['published_date']}}
+                        </p>
+
+                        <p class="">
+                            {{ $item['body'] }}
+                        </p>
+
+                        <a class="btn btn-danger btn-sm float-right mr-2" onclick="return myFunction();" href="{{url('/delete/stories/'.$item['id'])}}">delete</a>
+
+                        <a class="btn btn-primary btn-sm float-right mr-2" href="{{url('/edit/stories/'.$item['id'])  }}">edit</a>
+
+                        <a class="btn btn-secondary btn-sm float-left mr-2" href="{{url('api/json-api/'.$item['id'])}}">JSON</a>
+
+                        <a class="btn btn-secondary btn-sm float-left mr-2" href="{{url('api/xml-api/'.$item['id'])}}">XML</a>
+                    
                     </div>
                     @endforeach
                 </div>

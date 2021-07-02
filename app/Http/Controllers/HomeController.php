@@ -38,6 +38,7 @@ class HomeController extends Controller
         $model = new NewsStories();
         $model->title = $request->get('title');
         $model->body = $request->get('body');
+        $model->publisher = $request->get('publisher');
         $model->published_date = $request->get('published_date');
         $model->save();
         return redirect('/home');
@@ -54,6 +55,7 @@ class HomeController extends Controller
         $model = NewsStories::where('id', $request->get('id'))->first();
         $model->title = $request->get('title');
         $model->body = $request->get('body');
+        $model->publisher = $request->get('publisher');
         $model->published_date = $request->get('published_date');
         $model->save();
         return redirect('/home');

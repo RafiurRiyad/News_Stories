@@ -39,6 +39,11 @@
                     </div>
 
                     <div class="form-group">
+                        <label for="Publisher">Publisher Name</label>
+                        <input type="text" name="publisher" class="form-control" id="publisher" placeholder="publisher">
+                    </div>
+
+                    <div class="form-group">
                         <label for="Datepicker">Published at</label>
                         <p>Date: <input name="published_date" class="form-control" type="text" id="datepicker"></p>
                     </div>

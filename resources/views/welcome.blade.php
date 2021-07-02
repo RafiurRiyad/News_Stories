@@ -49,8 +49,8 @@
             }
 
             .links > a {
-                color: #636b6f;
-                padding: 0 25px;
+                color: #fff;
+                padding: 10px 25px;
                 font-size: 13px;
                 font-weight: 600;
                 letter-spacing: .1rem;
@@ -61,17 +61,31 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            .text {
+                color: #d0eae0;
+            }
+            .image {
+                background-image: url('{{ asset('/images/news_stories.jpg')}}');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                height:100%;
+            }
         </style>
     </head>
     <body>
-        <div id="loading" style="background-image: url('{{ asset('/images/news_stories.jpg')}}');">
-        <div class="flex-center position-ref full-height">
+        <div id="loading" class="rounded mx-auto d-block image">
+        <div class="flex-center position-ref full-height text">
             @if (Route::has('login'))
-                <div class="top-right links">
+                <div class="top-right links text">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
+                        <a href="{{ route('login') }}" >Login</a>
 
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}">Register</a>
@@ -81,18 +95,33 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
+                <div class="title m-b-md" style="color: #afe8f1">
                     Welcome To News Stories
                 </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8">
+                            <div class="card">
+                                <div class="card-header">Story List</div>
+                                <div class="col-md-12 col-sm-12 mb-5">
+
+                                    @foreach ($data as $item)
+                                    <div class="col-md-12 col-sm-12 mb-5">
+                                        <h3 style="color:#bfbfbf;">{{ $item['title'] }}<h3>
+                                        <p class="col-md-6">
+                                            by {{$item['publisher']}} on {{$item['published_date']}}
+                                        </p>
+
+                                        <p class="">
+                                            {{ $item['body'] }}
+                                        </p>
+                                    </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

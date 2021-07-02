@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'NewsStoriesController@welcome');
 
 Auth::routes();
 
@@ -27,6 +25,4 @@ Route::post('/edit/stories', 'HomeController@editPost');
 
 Route::get('/delete/stories/{id}', 'HomeController@deletePost');
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
