@@ -21,4 +21,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/json-api/{id}', 'NewsStoriesController@json_api');
-Route::get('/xml-api', 'NewsStoriesController@xml_api');
+Route::get('/xml-api/{id}', 'NewsStoriesController@xml_api');
