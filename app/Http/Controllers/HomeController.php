@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $data = NewsStories::get();
+        $data = NewsStories::orderBy('published_date','desc')->paginate(4);
         return view('home', compact('data'));
     }
 

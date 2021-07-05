@@ -9,7 +9,7 @@ class NewsStoriesController extends Controller
 {
     public function welcome()
     {
-        $data = NewsStories::get();
+        $data =  NewsStories::orderBy('published_date','desc')->paginate(4);
         if(auth()->user()){    
             return view('home', compact('data'));
         } else {

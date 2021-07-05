@@ -12,14 +12,6 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
-    <!-- deletion confirmation -->
-    <script>
-        function myFunction() {
-            if(!confirm("Warning!!! This data will be lost permanently!"))
-            event.preventDefault();
-        }
-    </script>
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
