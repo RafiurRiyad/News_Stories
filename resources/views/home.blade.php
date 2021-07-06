@@ -118,7 +118,7 @@
 			<header class="clearfix">
                 <h1 class="animated bounceIn">News Story</h1>
                 <p class="animated slideInLeft">Welcome to the best blog journey ever.</p>
-                <p class="animated slideInRight">We Are Here For You. Go through the blogs as you like Thanks for being with us.</p>
+                <p class="animated slideInRight">We Are Here For You. Go through the blogs as you like. Thanks for being with us.</p>
             </header>	    
 	    </div><!-- /headerwrap -->		
 
