@@ -42,7 +42,7 @@
 	      <div class="container">
 	        <div class="navbar-header">
 	          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-	          	<i class="el-icon-lines"></i>
+			  	<img src="https://img.icons8.com/material-outlined/24/000000/menu--v1.png"/>
 	          </button>
 	          <a class="navbar-brand hidden-xs hidden-sm" href="#home"><h1>News Story</h1></a>
 	        </div>
